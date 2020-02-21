@@ -5,7 +5,6 @@
 const fs = require('fs'),
       util = require('util'),
       readFile = util.promisify(fs.readFile),
-      opts = [ 'SL', 'OB', 'TR', 'CL', 'SB' ],
       filePath = process.argv.length > 2 ? process.argv[2] : null;
 
 if (!filePath) {
@@ -15,6 +14,15 @@ if (!filePath) {
 (async function() {
    const ballots = await readFile(filePath, 'utf8')
       .then((json) => { return JSON.parse(json); });
+
+   const opts = ballots.reduce((memo, ballot) => {
+      ballot.forEach((opt) => {
+         if (!memo.includes(opt)) {
+            memo.push(opt);
+         }
+      });
+      return memo;
+   }, []);
 
    // Get the value of each option in each ballot
    const processed = ballots.map((ballot) => {
