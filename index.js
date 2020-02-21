@@ -33,8 +33,6 @@ if (!filePath) {
       }, {});
    });
 
-   console.log(processed);
-
    // Add up the value of each option globally
    const counted = opts.reduce((memo, opt) => {
       const value = processed.map((o) => { return o[opt] })
