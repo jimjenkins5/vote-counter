@@ -1,0 +1,15 @@
+{
+  "name": "borda-vote-counter",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+     "borda-vote-counter": "index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}
