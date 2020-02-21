@@ -3,9 +3,9 @@
   "version": "1.0.3",
   "description": "",
   "bin": {
-    "borda-vote-counter": "index.js"
+    "borda-vote-counter": "./bin/index.js"
   },
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

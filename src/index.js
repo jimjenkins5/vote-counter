@@ -2,18 +2,7 @@
 
 'use strict';
 
-const fs = require('fs'),
-      util = require('util'),
-      readFile = util.promisify(fs.readFile),
-      filePath = process.argv.length > 2 ? process.argv[2] : null;
-
-if (!filePath) {
-   console.error('You must pass a filePath as an argument!');
-}
-
-(async function() {
-   const ballots = await readFile(filePath, 'utf8')
-      .then((json) => { return JSON.parse(json); });
+module.exports = function(ballots) {
 
    const opts = ballots.reduce((memo, ballot) => {
       ballot.forEach((opt) => {
@@ -56,6 +45,9 @@ if (!filePath) {
       return win;
    }, { value: 0 });
 
-   // Pull the option with the highest value
-   console.log('WINNER: ', winner);
-}());
+   return {
+      winner: winner,
+      processedBallets: processed,
+      optionValues: counted,
+   };
+}
