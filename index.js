@@ -27,10 +27,13 @@ if (!filePath) {
    // Get the value of each option in each ballot
    const processed = ballots.map((ballot) => {
       return ballot.reduce((memo, vote, index) => {
-         memo[vote] = opts.length - index;
+         // Vote should be N-{position}. So first place is N-1 and last is 0.
+         memo[vote] = opts.length - index - 1;
          return memo;
       }, {});
    });
+
+   console.log(processed);
 
    // Add up the value of each option globally
    const counted = opts.reduce((memo, opt) => {
@@ -51,6 +54,7 @@ if (!filePath) {
       if (current.value > win.value) {
          return current;
       }
+
       return win;
    }, { value: 0 });
 
