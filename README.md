@@ -10,7 +10,10 @@ This small script takes a json file of ballots and determines the winner using t
 npx borda-vote-counter /path/to/votes.json
 ```
 
-Format of votes.json
+### Format of votes.json.
+
+The JSON file should be an array of ballot arrays. The first item in each ballot is the
+preferred option, the last is the least preferred option.
 
 ```json
 [
