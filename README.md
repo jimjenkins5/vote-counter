@@ -4,7 +4,7 @@
 
 This small script takes a json file of ballots and determines the winner using the Borda method.
 
-## How do I use it?i
+## How do I use it?
 
 ```bash
 npx borda-vote-counter /path/to/votes.json
