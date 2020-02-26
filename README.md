@@ -27,3 +27,9 @@ preferred option, the last is the least preferred option.
   [ "SB", "CL", "OB" ]
 ]
 ```
+
+The above json file will result in the following output:
+
+```bash
+WINNER { option: 'OB', value: 21 }
+```
