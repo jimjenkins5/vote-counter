@@ -2,7 +2,7 @@
 
 ## What?
 
-This small script takes a json file of ballets and determines the winner using the Borda method.
+This small script takes a json file of ballots and determines the winner using the Borda method.
 
 ## How do I use it?i
 
